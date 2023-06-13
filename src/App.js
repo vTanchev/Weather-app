@@ -5,7 +5,10 @@ import axios from "axios";
 const App = () => {
   const [data, setData] = useState({});
   const [location, setLocation] = useState("");
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=08ee817d01393822ee2fb2947c6d66e8`;
+
+  const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
+
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${API_KEY}`;
 
   const searchLocation = (event) => {
     if (event.key === "Enter") {
